@@ -1,0 +1,163 @@
+/* ========================================================
+   ESTILOS GENERALES Y LAYOUT RESPONSIVO ESPACIOSO
+   ======================================================== */
+
+:root {
+  --carelibro-blue-900: #12366b;
+  --carelibro-blue-800: #174b91;
+  --carelibro-blue-700: #1b5db5;
+  --carelibro-blue-600: #2474d2;
+  --carelibro-blue-100: #dceaff;
+  --carelibro-blue-50: #f2f7ff;
+}
+
+body.w3-theme-l5 {
+  background-color: var(--carelibro-blue-50) !important;
+}
+
+.w3-theme-d1,
+.w3-theme-d2 {
+  color: #fff !important;
+  background-color: var(--carelibro-blue-700) !important;
+}
+
+.w3-theme-d2 {
+  background-color: var(--carelibro-blue-800) !important;
+}
+
+.w3-theme-d3,
+.w3-theme-d4 {
+  color: #fff !important;
+  background-color: var(--carelibro-blue-900) !important;
+}
+
+.w3-theme-l1 {
+  color: var(--carelibro-blue-900) !important;
+  background-color: #e7f0ff !important;
+}
+
+.w3-theme-l2,
+.w3-theme-l3 {
+  color: var(--carelibro-blue-900) !important;
+  background-color: var(--carelibro-blue-100) !important;
+}
+
+.w3-theme-l4 {
+  color: var(--carelibro-blue-900) !important;
+  background-color: #eaf2ff !important;
+}
+
+.w3-theme-l5 {
+  color: #1c2d45 !important;
+  background-color: var(--carelibro-blue-50) !important;
+}
+
+.w3-text-theme {
+  color: var(--carelibro-blue-700) !important;
+}
+
+.w3-hover-theme:hover {
+  color: #fff !important;
+  background-color: var(--carelibro-blue-700) !important;
+}
+
+/* Contenedor principal con Grid espacioso (elimina la apariencia unida/apretada) */
+.main-layout-container {
+  max-width: 1320px;
+  margin: 20px auto 40px auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 290px minmax(0, 1fr) 280px;
+  gap: 28px;
+  align-items: start;
+}
+
+/* Columna izquierda */
+.left-sidebar-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Columna central (Feed) */
+.feed-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+}
+
+/* Columna derecha */
+.right-sidebar-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Tarjetas con sombras suaves, bordes redondeados y aire */
+.w3-card,
+.w3-card-2,
+.w3-card-4 {
+  border-radius: 10px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid #e4e6eb;
+  overflow: hidden;
+}
+
+/* Separación interna dentro de contenedores */
+.w3-container {
+  padding: 16px 20px !important;
+}
+
+/* Adaptabilidad para pantallas medianas (tablets / laptops) */
+@media (max-width: 1100px) {
+  .main-layout-container {
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: 20px;
+    padding: 0 16px;
+  }
+  .right-sidebar-col {
+    display: none;
+  }
+}
+
+/* Adaptabilidad para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .main-layout-container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 0 12px;
+    margin-top: 65px;
+  }
+  .left-sidebar-col {
+    display: none;
+  }
+}
+
+/* Selección de texto con contraste garantizado en toda la aplicación */
+::selection {
+  background-color: var(--carelibro-blue-700);
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background-color: var(--carelibro-blue-700);
+  color: #ffffff;
+}
+
+/* Visibilidad permanente para opciones, enlaces y menús */
+.w3-white a,
+.w3-white button:not(.w3-theme-d2):not(.w3-theme-d1):not(.w3-theme-d4):not(.w3-blue):not(.w3-green):not(.w3-red),
+.w3-white p,
+.w3-white span:not(.w3-tag):not(.w3-badge) {
+  color: #050505;
+}
+
+/* Enlaces y botones temáticos con texto blanco explícito */
+.w3-button.w3-theme-d2,
+.w3-button.w3-theme-d1,
+.w3-button.w3-theme-d4,
+.w3-button.w3-blue {
+  color: #ffffff !important;
+}
+

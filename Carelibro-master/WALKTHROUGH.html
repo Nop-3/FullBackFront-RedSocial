@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Walkthrough: PochecheBook con Rutas (Nota 4.5), Rutas Restringidas (Nota 5.0) y Privacidad</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: #1c1e21;
+      background-color: #f0f2f5;
+      margin: 0;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+    h1 {
+      color: #1877f2;
+      border-bottom: 2px solid #e4e6eb;
+      padding-bottom: 12px;
+      font-size: 26px;
+    }
+    h2 {
+      color: #050505;
+      margin-top: 30px;
+      border-bottom: 1px solid #f0f2f5;
+      padding-bottom: 8px;
+      font-size: 20px;
+    }
+    h3 {
+      color: #1877f2;
+      margin-top: 20px;
+      font-size: 16px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 12px;
+      background: #e7f3ff;
+      color: #1877f2;
+      font-size: 12px;
+      font-weight: 700;
+      margin-left: 8px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+    th, td {
+      border: 1px solid #e4e6eb;
+      padding: 10px 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #f7f8fa;
+      font-weight: 600;
+    }
+    code {
+      background: #f0f2f5;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: Consolas, monospace;
+      font-size: 13px;
+      color: #d63384;
+    }
+    pre {
+      background: #24292f;
+      color: #f6f8fa;
+      padding: 14px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 13px;
+    }
+    .alert-box {
+      background: #e7f3ff;
+      border-left: 4px solid #1877f2;
+      padding: 14px 18px;
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📱 PochecheBook - Informe Técnico de Rutas y Privacidad</h1>
+    <p>Este informe certifica el cumplimiento total de los requisitos de enrutamiento con <strong>React Router</strong> (<span class="badge">Nota 4.5</span>) y el sistema de <strong>Rutas Restringidas / Protegidas con Pantalla de Acceso Incorrecto y Privacidad de Amigos</strong> (<span class="badge">Nota 5.0</span>).</p>
+
+    <h2>🎯 Cumplimiento de Criterios de Evaluación</h2>
+
+    <h3>1. Rutas de Páginas de la Red Social (Nota 4.5)</h3>
+    <p>Todas las páginas fueron migradas desde <code>Paginas RedSocial_app</code> e integradas en <code>src/pages/</code>:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Página</th>
+          <th>Componente React</th>
+          <th>Ruta</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Inicio / Feed</td>
+          <td><code>FeedPage.jsx</code></td>
+          <td><code>/</code></td>
+          <td>Feed principal con publicaciones multimedia y visor de fotos.</td>
+        </tr>
+        <tr>
+          <td>Perfil</td>
+          <td><code>ProfilePage.jsx</code></td>
+          <td><code>/perfil</code></td>
+          <td>Portada, datos personales, fotos destacadas y posts propios.</td>
+        </tr>
+        <tr>
+          <td>Chat</td>
+          <td><code>ChatPage.jsx</code></td>
+          <td><code>/mensajes</code></td>
+          <td>Mensajería instantánea con amigos confirmados y respuestas simuladas.</td>
+        </tr>
+        <tr>
+          <td>Grupos</td>
+          <td><code>GroupsPage.jsx</code></td>
+          <td><code>/grupos</code></td>
+          <td>Comunidades, sugeridos, búsqueda en vivo y creación de grupos.</td>
+        </tr>
+        <tr>
+          <td>Configuración</td>
+          <td><code>SettingsPage.jsx</code></td>
+          <td><code>/configuracion</code></td>
+          <td>Pestañas General, Privacidad y Notificaciones con persistencia.</td>
+        </tr>
+        <tr>
+          <td>Login</td>
+          <td><code>LoginPage.jsx</code></td>
+          <td><code>/login</code></td>
+          <td>Inicio de sesión con credenciales y panel de acceso rápido.</td>
+        </tr>
+        <tr>
+          <td>Registro</td>
+          <td><code>RegisterPage.jsx</code></td>
+          <td><code>/registro</code></td>
+          <td>Formulario de registro con avatar, fecha y género.</td>
+        </tr>
+        <tr>
+          <td>Acceso Incorrecto</td>
+          <td><code>AccessDeniedPage.jsx</code></td>
+          <td>Rutas restringidas</td>
+          <td>Pantalla que impide el acceso a no autenticados con botón al login.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>🛡️ Rutas Restringidas y Privacidad de Amigos (Nota 5.0)</h2>
+    <div class="alert-box">
+      <strong>Privacidad y Control de Acceso:</strong>
+      <ul>
+        <li><strong>Pantalla de Acceso Incorrecto:</strong> Si un usuario sin sesión intenta entrar a una ruta protegida (<code>/</code>, <code>/perfil</code>, <code>/mensajes</code>, <code>/grupos</code>, <code>/configuracion</code>), se despliega <code>AccessDeniedPage</code> con botón directo a <code>/login</code>.</li>
+        <li><strong>Interfaz Limpia:</strong> Se eliminó el banner superior para mantener el diseño impecable.</li>
+        <li><strong>Botón Perfil Permanente:</strong> Texto siempre visible en blanco puro en la barra superior.</li>
+        <li><strong>Notificaciones Legibles:</strong> Contraste permanente que evita que las letras desaparezcan.</li>
+        <li><strong>Aislamiento de No-Amigos:</strong> Juana de Arco (en estado pendiente) no puede publicar ni comentar en el feed del usuario, ni el usuario ve sus posts hasta que acepte su solicitud en el panel lateral.</li>
+      </ul>
+    </div>
+
+    <h2>💻 Comandos de Ejecución y Entrega</h2>
+    <pre><code># Instalar dependencias
+npm install
+
+# Iniciar servidor local
+npm run dev
+
+# Compilar para producción
+npm run build
+
+# Subir cambios al repositorio Git
+git add .
+git commit -m "Entrega PochecheBook: Rutas Nota 4.5, Rutas Restringidas Nota 5.0, Acceso Incorrecto y Privacidad"
+git push origin main</code></pre>
+  </div>
+</body>
+</html>
